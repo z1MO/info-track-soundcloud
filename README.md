@@ -6,3 +6,12 @@
 - название трека
 - постер трека, который легко скопировать
 - спойлер, в котором содержится остальное описание трека
+
+
+## Установка 
+1. Скачиваем расширение [Styler](//chrome.google.com/webstore/detail/styler/bogdgcfoocbajfkjjolkmcdcnnellpkb) для Google Chromу
+2. Открываем сайт [soundcloud.com](//soundcloud.com/)
+3. Открываем в правом верхнем углу окно расширения (иконка с буквой "S")
+4. Вставляем код из файла [soundcloud.js](./soundcloud.js) в поле "Javascript/jQuery"
+5. Обновляем страницу
+6. Profit!
