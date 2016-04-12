@@ -1,10 +1,6 @@
 $(window).load(function() {
 
 	function gener() {
-		// Добавление стилей в head
-		var styles = document.createElement('style');
-		styles.innerHTML = '.wrapper{margin-top:100px;font-size:24px;text-align:center}.hashtags_vk{width:1100px;margin:0 auto}.track-info{margin:20px 0}.track-info>summary{cursor:pointer;outline:0}.track-info__content{width:800px;margin:15px auto;font-size:16px;text-align:left}';
-		document.querySelector('head').appendChild(styles);
 
 		//Остановка трека (если он играет)
 		var pause_butt = document.querySelector('.heroPlayButton-pause');
@@ -39,7 +35,19 @@ $(window).load(function() {
 						'<summary>Информация об треке</summary>' +
 						'<div class="track-info__content">' + content + '</div>' +
 					'</details>';
-		document.body.innerHTML = '<div class="wrapper">' + res + '</div>';
+		res = '<div class="wrapper">' + res + '</div>';
+
+		function _open( url, name, width, height ) {
+			return window.open( url, name, 'width=' + width + ',height=' + height + ',left=' + ((window.innerWidth - width)/2) + ',top=' + ((window.innerHeight - height)/2) );
+		}
+
+		var windowResult = _open('about:blank', 'hello', 730, 720); // открытие окна
+		windowResult.document.write(res); // добавление контента
+
+		// Добавление стилей в окно
+		var styles = document.createElement('style');
+		styles.innerHTML = 'body{background:#F9F9F9;padding:30px;text-align:center;font:22px/1.45 "Lucida Sans Unicode","Lucida Grande",sans-serif}.track-info{margin-top:30px}.track-info>summary{cursor:pointer;outline:0}.track-info__content{font-size:14px;text-align:left}';
+		windowResult.document.querySelector('head').appendChild(styles);
 	}
 
 	function main() {
